@@ -1,0 +1,13 @@
+diff --git a/widget/GfxInfoBase.cpp b/widget/GfxInfoBase.cpp
+index 9ebeb94673c98bde3238c03208d6fa9408c21452..bdab690cda9b02429e5fa221d4df3a5673fb4b51 100644
+--- a/widget/GfxInfoBase.cpp
++++ b/widget/GfxInfoBase.cpp
+@@ -1405,7 +1405,7 @@ const nsCString& GfxInfoBase::GetApplicationVersion() {
+     // Get the version from xpcom/system/nsIXULAppInfo.idl
+     nsCOMPtr<nsIXULAppInfo> app = do_GetService("@mozilla.org/xre/app-info;1");
+     if (app) {
+-      app->GetVersion(gBaseAppVersion);
++      app->GetPlatformVersion(gBaseAppVersion);
+     }
+   }
+   return gBaseAppVersion;
